@@ -312,7 +312,7 @@ client:on('messageCreate', function(message)
       }
     end
   else
-    if pairs(triggerTable[message.guild.id]) then
+    if triggerTable[message.guild.id] then
       for key, value in pairs(triggerTable[message.guild.id]) do
         if message.content:find(value.trigger.pattern) then
           message:reply(value.response.pattern:format(message.content:match(value.trigger.pattern)))
