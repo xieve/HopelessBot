@@ -77,7 +77,7 @@ client:on('messageCreate', function(message)
             color = discordia.Color(255, 0, 0).value
           }
         }
-      elseif command.args[1]:gsub('§§', ''):len() < 3 or command.args[2]:gsub('§§', ''):len() < 3 then
+      elseif (command.args[1]:gsub('§§', '') or command.args[1]):len() < 3 or (command.args[2]:gsub('§§', '') or command.args[2]):len() < 3 then
         message:reply
         {
           embed =
