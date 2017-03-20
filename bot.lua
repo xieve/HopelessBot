@@ -67,7 +67,7 @@ client:on('messageCreate', function(message)
   if command then
     triggerTable[message.guild.id] = triggerTable[message.guild.id] or {}
     if command.main == 'add' then
-      if command.args[1] == '' or command.args[2] == '' then
+      if not command.args[1] or not command.args[2] then
         message:reply
         {
           embed =
