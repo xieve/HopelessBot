@@ -14,12 +14,10 @@ end
 
 local function readTable(filename)
   local file = io.open(filename, 'r')
+  if not file then return {} end
   local data = json.decode(file:read('*all'))
   file:close()
-  if data then
-    return data
-  else
-    return {}
+  return data or {}
   end
 end
 
