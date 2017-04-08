@@ -328,4 +328,4 @@ client:on('messageCreate', function(message)
   end
 end)
 
-client:run('no token for you lmao')
+client:run(args[2])
